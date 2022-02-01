@@ -1,0 +1,47 @@
+{
+  "author": {
+    "name": "netop://ウエハ",
+    "url": "https://webb.page"
+  },
+  "bugs": {
+    "url": "https://github.com/neuenet/extensions/issues"
+  },
+  "description": "Lists of Handshake extensions owned and operated by Neuenet",
+  "devDependencies": {
+    "@webb/config-prettier": "*",
+    "chronver": "*",
+    "del-cli": "^4.0.1",
+    "husky": "^7.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5",
+    "updates": "^13.0.0"
+  },
+  "homepage": "https://neuenet.com",
+  "keywords": [
+    "domain",
+    "extension",
+    "handshake",
+    "tld"
+  ],
+  "license": "ISC",
+  "main": "dist/index.js",
+  "name": "@neuenet/extensions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neuenet/extensions.git"
+  },
+  "scripts": {
+    "build": "npm run cleanup && tsc",
+    "cleanup": "del './dist'",
+    "increment": "chronver --increment package",
+    "init-husky": "npm i husky -D && npx husky install && npx husky add .husky/pre-commit 'npm run pre-commit'",
+    "pre-commit": "npm run build && npm run pretty && npm run increment && git add -A :/",
+    "pretty": "prettier --write 'dist/**/*.js' 'dist/**/*.ts'",
+    "test": "run-s test:*",
+    "test:dependencies": "updates --update ./",
+    "test:typescript": "tsc"
+  },
+  "version": "2022.01.31"
+}
