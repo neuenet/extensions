@@ -33,6 +33,7 @@ export default [
   "paizuri",
   "pencildick",
   "pubic",
+  "pussywagon",
   /// S
   "secks",
   /// T

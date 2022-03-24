@@ -4,6 +4,7 @@
 ///  U T I L
 
 import mature from "./mature";
+import reserved from "./reserved";
 import sansMature from "./sans-mature";
 
 
@@ -12,10 +13,12 @@ import sansMature from "./sans-mature";
 
 export {
   mature,
+  reserved,
   sansMature
 }
 
 export default [
   ...mature,
+  ...reserved,
   ...sansMature
 ].sort();

@@ -1,6 +1,6 @@
 # @neuenet/extensions
 
-> Lists of [Handshake](https://handshake.org) extensions owned and operated by [Neuenet](https://neuenet.com)
+> Lists of [Handshake](https://handshake.org) extensions owned and operated by [Neuenet](https://registry.neuenet/)
 
 
 
@@ -15,7 +15,7 @@ npm i @neuenet/extensions
 ## Usage
 
 ```ts
-import extensions, { mature, sansMature } from "@neuenet/extensions";
+import extensions, { mature, reserved, sansMature } from "@neuenet/extensions";
 
 
 
@@ -43,6 +43,17 @@ console.log(mature);
 ]
 */
 
+console.log(reserved);
+
+/*
+[
+  '07d0eb',      'bchfrnt',
+  'beachback',   'beachfront',
+  'chronver',    'collectr',
+  ... more items
+]
+*/
+
 console.log(sansMature);
 
 /*
@@ -62,9 +73,10 @@ console.log(sansMature);
 ## Notes
 
 - `mature` export contains potentially offensive, definitely adult language.
-- `sansMature` export contains words that are "safe for work."
-- Default export combines `mature` and `sansMature` exports are sorts alphabetically.
-- All words in these lists are Unicode. If converting to punycode, use the transitional mode to ensure validity of your output.
+- `reserved` exports contains names that are for private use by Neuenet.
+- `sansMature` export contains names that are "safe for work."
+- Default export combines `mature`, `reserved`,  and `sansMature` exports and sorts alphabetically.
+- All names in these lists are Unicode. If converting to punycode, use the transitional mode to ensure validity of your output.
 
 
 
